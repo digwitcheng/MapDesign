@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FDBA559-787C-4198-BE7F-B2316B0DF700}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AGV_V1._0</RootNamespace>
+    <AssemblyName>AGV V1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;moni</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="NLog">
+      <HintPath>packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignCommand\EmptyRoadCommand.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="MyPoint.cs" />
+    <Compile Include="DesignCommand\AddDireCommand.cs" />
+    <Compile Include="DesignCommand\BaseCommand.cs" />
+    <Compile Include="DesignCommand\ICommand.cs" />
+    <Compile Include="DesignCommand\MapControl.cs" />
+    <Compile Include="DesignCommand\MoveCommand.cs" />
+    <Compile Include="DesignCommand\RoadCommand.cs" />
+    <Compile Include="DesignCommand\NoneCommand.cs" />
+    <Compile Include="DesignCommand\ObserveCommand.cs" />
+    <Compile Include="DesignCommand\RemoveDireCommand.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Remoting\RouteRemoteObject.cs" />
+    <Compile Include="Util\DrawUtil.cs" />
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\ConstDefine.cs" />
+    <Compile Include="Map\MapNode.cs" />
+    <Compile Include="Map\MyLocation.cs" />
+    <Compile Include="Map\ElecMap.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map\MapNodeType.cs" />
+    <Compile Include="NLog\NLogs.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\MapFileUtil.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="NLog\NLog.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Belt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargeOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChargeStation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Destination.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obstacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_F.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicle_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Destination.png" />
+    <None Include="Resources\Button_Scanner.png" />
+    <None Include="Resources\Button_Obstacle.png" />
+    <None Include="Resources\right1.png" />
+    <None Include="Resources\up1.png" />
+    <None Include="Resources\down1.png" />
+    <None Include="Resources\left1.png" />
+    <None Include="Resources\left2.png" />
+    <None Include="Resources\right2.png" />
+    <None Include="Resources\up2.png" />
+    <None Include="Resources\down2.png" />
+    <None Include="Resources\up3.png" />
+    <None Include="Resources\down3.png" />
+    <None Include="Resources\left3.png" />
+    <None Include="Resources\right3.png" />
+    <None Include="Resources\all.png" />
+    <None Include="Resources\besides_down.png" />
+    <None Include="Resources\besides_left.png" />
+    <None Include="Resources\besides_right.png" />
+    <None Include="Resources\besides_up.png" />
+    <None Include="Resources\down_left.png" />
+    <None Include="Resources\down_right.png" />
+    <None Include="Resources\up_left.png" />
+    <None Include="Resources\up_right.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\timg.jpg" />
+    <None Include="Resources\all_gray.png" />
+    <None Include="Resources\besides_down_gray.png" />
+    <None Include="Resources\besides_left_gray.png" />
+    <None Include="Resources\besides_right_gray.png" />
+    <None Include="Resources\besides_up_gray.png" />
+    <None Include="Resources\down_gray.png" />
+    <None Include="Resources\down_left_gray.png" />
+    <None Include="Resources\down_right_gray.png" />
+    <None Include="Resources\empty_gray.png" />
+    <None Include="Resources\left_gray.png" />
+    <None Include="Resources\right_gray.png" />
+    <None Include="Resources\up_down_left_right_gray.png" />
+    <None Include="Resources\up_gray.png" />
+    <None Include="Resources\up_left_gray.png" />
+    <None Include="Resources\up_right_gray.png" />
+    <None Include="Resources\besides_down_green.png" />
+    <None Include="Resources\besides_left_green.png" />
+    <None Include="Resources\besides_right_green.png" />
+    <None Include="Resources\besides_up_green.png" />
+    <None Include="Resources\down_green.png" />
+    <None Include="Resources\down_left_green.png" />
+    <None Include="Resources\down_right_green.png" />
+    <None Include="Resources\empty_green.png" />
+    <None Include="Resources\left_green.png" />
+    <None Include="Resources\right_green.png" />
+    <None Include="Resources\up_down_left_right_green.png" />
+    <None Include="Resources\up_green.png" />
+    <None Include="Resources\up_left_green.png" />
+    <None Include="Resources\up_right_green.png" />
+    <None Include="Resources\all_purple.png" />
+    <None Include="Resources\besides_down_purple.png" />
+    <None Include="Resources\besides_left_purple.png" />
+    <None Include="Resources\besides_right_purple.png" />
+    <None Include="Resources\besides_up_purple.png" />
+    <None Include="Resources\down_left_purple.png" />
+    <None Include="Resources\down_purple.png" />
+    <None Include="Resources\down_right_purple.png" />
+    <None Include="Resources\empty_purple.png" />
+    <None Include="Resources\left_purple.png" />
+    <None Include="Resources\right_purple.png" />
+    <None Include="Resources\up_left_purple.png" />
+    <None Include="Resources\up_purple.png" />
+    <None Include="Resources\up_right_purple.png" />
+    <None Include="Resources\timg %286%29.jpg" />
+    <None Include="Resources\right_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Map\ElcMap.xml" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\youzheng.ico" />
+    <None Include="Resources\all_white.png" />
+    <None Include="Resources\left_right_white.png" />
+    <None Include="Resources\empty_white.png" />
+    <None Include="Resources\down_white.png" />
+    <None Include="Resources\down_right_white.png" />
+    <None Include="Resources\down_left_white.png" />
+    <None Include="Resources\besides_up_white.png" />
+    <None Include="Resources\besides_right_white.png" />
+    <None Include="Resources\besides_left_white.png" />
+    <None Include="Resources\besides_down_white.png" />
+    <None Include="Resources\up_white.png" />
+    <None Include="Resources\up_right_white.png" />
+    <None Include="Resources\up_left_white.png" />
+    <None Include="Resources\up_down_white.png" />
+    <None Include="Resources\obstacle_white.png" />
+    <None Include="Resources\left_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
