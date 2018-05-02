@@ -113,23 +113,26 @@ namespace AGV_V1._0
             colComBox.SelectedIndex = 0;
             SetMapView();
 
-
-
-        }
+        }        
         void SetMapView()
         {
+            pic.Location = Point.Empty;
             int w = ConstDefine.g_NodeLength * (ConstDefine.g_WidthNum + 2);
             int h = ConstDefine.g_NodeLength * (ConstDefine.g_HeightNum + 2);
-            //设置pictureBox的尺寸和位置
-            pic.Location = Point.Empty;
+            //设置滚动条滚动的区域
+            panel1.AutoScrollMinSize = new Size(w, h);
             pic.Size = new Size(w, h);
             surface = new Bitmap(w, h);
             g = Graphics.FromImage(surface);
             pic.Image = newSurface;
             pic.BackColor = Color.FromArgb(100, 0, 0, 0);
 
-            //设置滚动条滚动的区域
-           panel1.AutoScrollMinSize = new Size(w, h);
+
+            //Point point = Cursor.Position;
+            //Point midPoint = new Point(FORM_WIDTH / 2, FORM_HEIGHT / 2);
+            ////panel1.AutoScrollPosition = new Point(panel1.HorizontalScroll.Value + (int)(point.X - midPoint.X), panel1.VerticalScroll.Value + (int)(point.Y - midPoint.Y));
+            //panel1.AutoScrollOffset = new Point( (int)(midPoint.X-point.X ),(int)(midPoint.Y-point.Y));
+                      
             SetMapLocation();
             
 
@@ -302,7 +305,7 @@ namespace AGV_V1._0
             {
                 ConstDefine.g_NodeLength = (int)(ConstDefine.g_NodeLength * ENLARGER_RADIO);
                 SetMapView();
-                this.Invalidate();
+               this.Invalidate();
             }
         }
 
@@ -517,7 +520,7 @@ namespace AGV_V1._0
             List<BaseCommand> commands = new List<BaseCommand>();
             for (int i = 0; i < Elc.HeightNum; i++)
             {
-                BaseCommand command = GetCurrentCommand(colNum, i);
+                BaseCommand command = GetCurrentCommand(i,colNum);
                 command.Dir = GetComBoxDirection(colComBox);
                 commands.Add(command);
             }
