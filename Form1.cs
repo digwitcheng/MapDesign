@@ -493,15 +493,7 @@ namespace AGV_V1._0
                 MessageBox.Show("输入的行不合法!");
                 return;
             }
-             List<BaseCommand> commands = new List<BaseCommand>();
-            for (int i = 0; i < Elc.WidthNum; i++)
-            {
-                BaseCommand command = GetCurrentCommand(rowNum, i);
-                command.Dir = GetComBoxDirection(rowComBox);
-                commands.Add(command);
-            }
-            mapControl.ExcuteCommand(commands);
-            DrawMap(commands);
+            RowCommands(rowNum, rowNum);
         }
 
         private void colBtn_Click(object sender, EventArgs e)
@@ -517,12 +509,73 @@ namespace AGV_V1._0
                 MessageBox.Show("输入的列不合法!");
                 return;
             }
-            List<BaseCommand> commands = new List<BaseCommand>();
-            for (int i = 0; i < Elc.HeightNum; i++)
+            ColCommands(colNum,colNum);
+           
+        }
+        private void rowBtnDest_Click(object sender, EventArgs e)
+        {
+            string row = rowTxt.Text.ToString().Trim();
+            string torow = rowDest.Text.ToString().Trim();
+            if (row.Equals("") || torow.Equals(""))
             {
-                BaseCommand command = GetCurrentCommand(i,colNum);
-                command.Dir = GetComBoxDirection(colComBox);
-                commands.Add(command);
+                return;
+            }
+            int rowNum = Int32.Parse(row);
+            int toRowNum = Int32.Parse(torow);
+            if (rowNum < 0 || rowNum > Elc.HeightNum || toRowNum < 0 || toRowNum > Elc.HeightNum)
+            {
+                MessageBox.Show("输入的列不合法!");
+                return;
+            }
+            RowCommands(rowNum, toRowNum);
+            
+        }
+
+        private void colBtnDest_Click(object sender, EventArgs e)
+        {
+            string col = colTxt.Text.ToString().Trim();
+            string toCol = colDest.Text.ToString().Trim();
+            if (col.Equals("")||toCol.Equals(""))
+            {
+                return;
+            }
+            int colNum = Int32.Parse(col);
+            int toColNum = Int32.Parse(toCol);
+            if (colNum < 0 || colNum > Elc.WidthNum|| toColNum < 0 || toColNum > Elc.WidthNum)
+            {
+                MessageBox.Show("输入的列不合法!");
+                return;
+            }
+            ColCommands(colNum, toColNum);
+            
+        }
+        void RowCommands(int rowNum,int toRowNum)
+        {
+            List<BaseCommand> commands = new List<BaseCommand>();
+            for (int j = Math.Min(rowNum, toRowNum); j <= Math.Max(rowNum, toRowNum); j++)
+            {
+                for (int i = 0; i < Elc.WidthNum; i++)
+                {
+                    BaseCommand command = GetCurrentCommand(j, i);
+                    command.Dir = GetComBoxDirection(rowComBox);
+                    commands.Add(command);
+                }
+            }
+            mapControl.ExcuteCommand(commands);
+            DrawMap(commands);
+        }
+        void ColCommands(int colNum,int toColNum)
+        {
+            List<BaseCommand> commands = new List<BaseCommand>();
+
+            for (int j = Math.Min(colNum, toColNum); j <= Math.Max(colNum, toColNum); j++)
+            {
+                for (int i = 0; i < Elc.HeightNum; i++)
+                {
+                    BaseCommand command = GetCurrentCommand(i, j);
+                    command.Dir = GetComBoxDirection(colComBox);
+                    commands.Add(command);
+                }
             }
             mapControl.ExcuteCommand(commands);
             DrawMap(commands);
@@ -582,5 +635,6 @@ namespace AGV_V1._0
             InitUiView(path);
         }
 
+       
     }
 }

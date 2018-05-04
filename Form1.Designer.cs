@@ -42,6 +42,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.colDest = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rowDest = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.emptyRoadBtn = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,7 +72,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.emptyRoadBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,7 +92,7 @@
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(746, 6);
+            this.splitContainer1.Location = new System.Drawing.Point(745, 6);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -103,7 +109,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.picShow);
-            this.splitContainer1.Size = new System.Drawing.Size(263, 549);
+            this.splitContainer1.Size = new System.Drawing.Size(264, 549);
             this.splitContainer1.SplitterDistance = 265;
             this.splitContainer1.TabIndex = 36;
             // 
@@ -176,7 +182,7 @@
             this.picShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picShow.Location = new System.Drawing.Point(0, 0);
             this.picShow.Name = "picShow";
-            this.picShow.Size = new System.Drawing.Size(261, 278);
+            this.picShow.Size = new System.Drawing.Size(262, 278);
             this.picShow.TabIndex = 0;
             this.picShow.TabStop = false;
             // 
@@ -186,9 +192,9 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.pic);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(367, 6);
+            this.panel1.Location = new System.Drawing.Point(387, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 549);
+            this.panel1.Size = new System.Drawing.Size(349, 549);
             this.panel1.TabIndex = 35;
             // 
             // pic
@@ -205,6 +211,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.colDest);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.rowDest);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.emptyRoadBtn);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label8);
@@ -231,8 +243,71 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(352, 549);
+            this.panel2.Size = new System.Drawing.Size(372, 549);
             this.panel2.TabIndex = 14;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(123, 399);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(52, 23);
+            this.button6.TabIndex = 65;
+            this.button6.Text = "确定";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.colBtnDest_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(123, 374);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(52, 23);
+            this.button4.TabIndex = 64;
+            this.button4.Text = "确定";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.rowBtnDest_Click);
+            // 
+            // colDest
+            // 
+            this.colDest.Location = new System.Drawing.Point(66, 401);
+            this.colDest.Name = "colDest";
+            this.colDest.Size = new System.Drawing.Size(51, 21);
+            this.colDest.TabIndex = 63;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 398);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "到第几列：";
+            // 
+            // rowDest
+            // 
+            this.rowDest.Location = new System.Drawing.Point(66, 374);
+            this.rowDest.Name = "rowDest";
+            this.rowDest.Size = new System.Drawing.Size(51, 21);
+            this.rowDest.TabIndex = 61;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 377);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "到第几行：";
+            // 
+            // emptyRoadBtn
+            // 
+            this.emptyRoadBtn.AutoSize = true;
+            this.emptyRoadBtn.Location = new System.Drawing.Point(34, 226);
+            this.emptyRoadBtn.Name = "emptyRoadBtn";
+            this.emptyRoadBtn.Size = new System.Drawing.Size(83, 16);
+            this.emptyRoadBtn.TabIndex = 59;
+            this.emptyRoadBtn.TabStop = true;
+            this.emptyRoadBtn.Text = "无方向道路";
+            this.emptyRoadBtn.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -270,7 +345,7 @@
             "下",
             "左",
             "右"});
-            this.colComBox.Location = new System.Drawing.Point(157, 338);
+            this.colComBox.Location = new System.Drawing.Point(150, 337);
             this.colComBox.Name = "colComBox";
             this.colComBox.Size = new System.Drawing.Size(70, 20);
             this.colComBox.TabIndex = 55;
@@ -283,14 +358,14 @@
             "下",
             "左",
             "右"});
-            this.rowComBox.Location = new System.Drawing.Point(157, 312);
+            this.rowComBox.Location = new System.Drawing.Point(150, 311);
             this.rowComBox.Name = "rowComBox";
             this.rowComBox.Size = new System.Drawing.Size(70, 20);
             this.rowComBox.TabIndex = 54;
             // 
             // colBtn
             // 
-            this.colBtn.Location = new System.Drawing.Point(233, 339);
+            this.colBtn.Location = new System.Drawing.Point(226, 337);
             this.colBtn.Name = "colBtn";
             this.colBtn.Size = new System.Drawing.Size(54, 23);
             this.colBtn.TabIndex = 53;
@@ -300,7 +375,7 @@
             // 
             // rowBtn
             // 
-            this.rowBtn.Location = new System.Drawing.Point(233, 310);
+            this.rowBtn.Location = new System.Drawing.Point(226, 308);
             this.rowBtn.Name = "rowBtn";
             this.rowBtn.Size = new System.Drawing.Size(54, 23);
             this.rowBtn.TabIndex = 52;
@@ -407,7 +482,7 @@
             // 
             // cancelUndoBtn
             // 
-            this.cancelUndoBtn.Location = new System.Drawing.Point(111, 372);
+            this.cancelUndoBtn.Location = new System.Drawing.Point(111, 423);
             this.cancelUndoBtn.Name = "cancelUndoBtn";
             this.cancelUndoBtn.Size = new System.Drawing.Size(116, 28);
             this.cancelUndoBtn.TabIndex = 41;
@@ -417,7 +492,7 @@
             // 
             // undoBtn
             // 
-            this.undoBtn.Location = new System.Drawing.Point(6, 372);
+            this.undoBtn.Location = new System.Drawing.Point(3, 423);
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Size = new System.Drawing.Size(99, 28);
             this.undoBtn.TabIndex = 40;
@@ -462,8 +537,8 @@
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.77075F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.54941F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.64822F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3755F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.77866F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
@@ -475,17 +550,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1015, 561);
             this.tableLayoutPanel1.TabIndex = 38;
-            // 
-            // emptyRoadBtn
-            // 
-            this.emptyRoadBtn.AutoSize = true;
-            this.emptyRoadBtn.Location = new System.Drawing.Point(34, 226);
-            this.emptyRoadBtn.Name = "emptyRoadBtn";
-            this.emptyRoadBtn.Size = new System.Drawing.Size(83, 16);
-            this.emptyRoadBtn.TabIndex = 59;
-            this.emptyRoadBtn.TabStop = true;
-            this.emptyRoadBtn.Text = "无方向道路";
-            this.emptyRoadBtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -556,6 +620,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton emptyRoadBtn;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox colDest;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox rowDest;
+        private System.Windows.Forms.Label label9;
     }
 }
 
