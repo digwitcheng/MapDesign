@@ -178,8 +178,20 @@ namespace AGV_V1._0
                         int X = (j == 0 ? 0 : Elc.mapnode[i, j].X + ConstDefine.g_NodeLength);
                         DrawUtil.DrawString(g, i, ConstDefine.g_NodeLength / 2, Color.Yellow, X, Elc.mapnode[i, j].Y - 1);
                     }
+                    //绘制图标
+                    DrawIcon(i,j);
                 }
             }
+        }
+        void DrawIcon(int i,int j)
+        {
+            switch (Elc.mapnode[i, j].Type)
+            {
+                case MapNodeType.scanner:
+                    DrawUtil.DrawString(g, j, ConstDefine.g_NodeLength / 2, Color.FromArgb(), Elc.mapnode[i, j].X - 1, Elc.mapnode[i, j].X - 1);
+                    break;
+            }
+
         }
 
         Bitmap newSurface;
@@ -220,10 +232,14 @@ namespace AGV_V1._0
             {
                 dir = -1;
             }
+            else
+            {
+                dir = 15;
+            }
             Image img = IMAGE_DICT[dir];
             if (img != null)
             {
-                g.DrawImage(img, new Rectangle(Elc.mapnode[y, x].X - 1, Elc.mapnode[y, x].Y - 1, ConstDefine.g_NodeLength - 2, ConstDefine.g_NodeLength - 2));
+                g.DrawImage(img, new Rectangle(Elc.mapnode[y, x].X - 1, Elc.mapnode[y, x].Y - 1, ConstDefine.g_NodeLength, ConstDefine.g_NodeLength));
 
             }
         }

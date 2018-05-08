@@ -273,15 +273,17 @@
     <None Include="Resources\up_purple.png" />
     <None Include="Resources\up_right_purple.png" />
     <None Include="Resources\timg %286%29.jpg" />
-    <None Include="Resources\right_white.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Map\ElcMap.xml" />
-    <None Include="Resources\Icon1.ico" />
-    <None Include="Resources\youzheng.ico" />
-    <None Include="Resources\all_white.png" />
+    <None Include="Resources\up_white.png" />
+    <None Include="Resources\up_right_white.png" />
+    <None Include="Resources\up_left_white.png" />
+    <None Include="Resources\up_down_white.png" />
+    <None Include="Resources\right_white.png" />
+    <None Include="Resources\obstacle_white.png" />
+    <None Include="Resources\left_white.png" />
     <None Include="Resources\left_right_white.png" />
-    <None Include="Resources\empty_white.png" />
     <None Include="Resources\down_white.png" />
     <None Include="Resources\down_right_white.png" />
     <None Include="Resources\down_left_white.png" />
@@ -289,12 +291,11 @@
     <None Include="Resources\besides_right_white.png" />
     <None Include="Resources\besides_left_white.png" />
     <None Include="Resources\besides_down_white.png" />
-    <None Include="Resources\up_white.png" />
-    <None Include="Resources\up_right_white.png" />
-    <None Include="Resources\up_left_white.png" />
-    <None Include="Resources\up_down_white.png" />
-    <None Include="Resources\obstacle_white.png" />
-    <None Include="Resources\left_white.png" />
+    <None Include="Resources\all_white.png" />
+    <None Include="Resources\empty_white1.png" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\youzheng.ico" />
+    <None Include="Resources\empty_white.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

@@ -145,9 +145,6 @@
   <data name="down_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\down_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="empty_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empty_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="left_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left_right_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,5 +168,8 @@
   </data>
   <data name="right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
