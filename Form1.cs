@@ -185,12 +185,12 @@ namespace AGV_V1._0
         }
         void DrawIcon(int i,int j)
         {
-            switch (Elc.mapnode[i, j].Type)
-            {
-                case MapNodeType.scanner:
-                    DrawUtil.DrawString(g, j, ConstDefine.g_NodeLength / 2, Color.FromArgb(), Elc.mapnode[i, j].X - 1, Elc.mapnode[i, j].X - 1);
-                    break;
-            }
+            //switch (Elc.mapnode[i, j].Type)
+            //{
+            //    case MapNodeType.scanner:
+            //        DrawUtil.DrawString(g, j, ConstDefine.g_NodeLength / 2, Color.FromArgb(), Elc.mapnode[i, j].X - 1, Elc.mapnode[i, j].X - 1);
+            //        break;
+            //}
 
         }
 
